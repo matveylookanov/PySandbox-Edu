@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: pysandbox-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - EXECUTOR_IMAGE=pysandbox-executor
+      - MEMORY_LIMIT=128m
+      - NANO_CPUS=500000000
+      - EXECUTION_TIMEOUT_SECONDS=10
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - executor
+
+  frontend:
+    build: ./frontend
+    container_name: pysandbox-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  executor:
+    build: ./docker/executor
+    image: pysandbox-executor
+

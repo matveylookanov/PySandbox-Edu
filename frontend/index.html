@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PySandbox Edu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>PySandbox Edu</h1>
+      <p class="subtitle">Безопасная песочница для запуска Python-кода</p>
+    </header>
+
+    <main class="container">
+      <section class="editor-panel">
+        <label for="code" class="label">Ваш Python-код (до 10 000 символов):</label>
+        <textarea id="code" class="code-input" spellcheck="false" placeholder="print('Hello, PySandbox!')"></textarea>
+        <div class="controls">
+          <button id="run-btn" class="btn primary">Запустить код</button>
+          <span id="status" class="status"></span>
+        </div>
+      </section>
+
+      <section class="output-panel">
+        <h2>Результат выполнения</h2>
+        <div class="output-block">
+          <h3>STDOUT</h3>
+          <pre id="stdout"></pre>
+        </div>
+        <div class="output-block">
+          <h3>STDERR</h3>
+          <pre id="stderr"></pre>
+        </div>
+        <div class="output-meta">
+          <span>Код завершения: <strong id="exit-code">-</strong></span>
+          <span>Время: <strong id="duration">-</strong> мс</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>PySandbox Edu — учебный проект по интеграции транслятора Python с Docker</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

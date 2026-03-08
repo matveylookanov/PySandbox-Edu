@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.header {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  color: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1.5rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editor-panel,
+.output-panel {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem 1.25rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.code-input {
+  width: 100%;
+  min-height: 260px;
+  resize: vertical;
+  padding: 0.75rem 0.9rem;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  background: #020617;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  outline: none;
+  line-height: 1.5;
+}
+
+.code-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.6);
+}
+
+.controls {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #f9fafb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.75);
+}
+
+.btn.primary:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.5);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+.status {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.output-panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.output-block {
+  margin-bottom: 0.75rem;
+}
+
+.output-block h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+pre {
+  margin: 0;
+  padding: 0.5rem 0.6rem;
+  background: #020617;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  max-height: 240px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.output-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 0.35rem;
+}
+
+.footer {
+  padding: 0.8rem 2rem 1.2rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  background: #020617;
+}
+
